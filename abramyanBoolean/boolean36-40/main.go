@@ -1,3 +1,6 @@
+//Программа берет в качестве данных координаты шахматной фигуры
+//и проверяет может ли данная фигура "перепрыгнуть" на новую координату
+
 package main
 
 import "fmt"
@@ -20,7 +23,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -30,7 +33,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -49,7 +52,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -59,7 +62,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -76,7 +79,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -86,7 +89,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -103,7 +106,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -113,7 +116,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -132,7 +135,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -142,7 +145,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -159,7 +162,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x1 == 0 || x1 > 8) && (y1 == 0 || y1 > 8) {
+		if (x1 == 0 || x1 > 8) || (y1 == 0 || y1 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
@@ -169,7 +172,7 @@ func main() {
 			fmt.Print("Input error", err)
 			return
 		}
-		if (x2 == 0 || x2 > 8) && (y2 == 0 || y2 > 8) {
+		if (x2 == 0 || x2 > 8) || (y2 == 0 || y2 > 8) {
 			fmt.Print("Таких координат нет!")
 			return
 		}
