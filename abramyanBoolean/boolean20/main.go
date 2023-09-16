@@ -13,7 +13,7 @@ func main() {
 	//Unfortunately this error caption does not catch "wrong type" error
 	//for example it reads normally these inputs: 514ijbg or 568.5642
 	_, err := fmt.Scan(&n)
-	//fmt.Println("JGJG: \t", n)
+	fmt.Println("JGJG: \t", n)
 	if err != nil {
 		fmt.Println("Input error: ", err)
 		return
