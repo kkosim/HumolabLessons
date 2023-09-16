@@ -22,7 +22,7 @@ func GetCharachteristics() (weight, height, age float64, err error) {
 
 func CountRequiredCalories(weight, height, age float64) float64 {
 	dayLimit := bmrCon + (weightCof * weight) + (heightCof * height) - (ageCof * age)
-	fmt.Printf("Вам нужно %.2f алорий в день\n", dayLimit)
+	fmt.Printf("Вам нужно %.2f ккал в день\n", dayLimit)
 	return dayLimit
 }
 
@@ -33,7 +33,7 @@ func GetDistAndCalEaten() (sprintDist, eatenCal float64, err error) {
 		fmt.Println("Input error: ", err.Error())
 		return
 	}
-	fmt.Print("Сколько калий вы сегодня нахомячили? ")
+	fmt.Print("Сколько ккал вы сегодня нахомячили? ")
 	_, err = fmt.Scan(&eatenCal)
 	if err != nil {
 		fmt.Println("Input error: ", err.Error())
@@ -42,12 +42,12 @@ func GetDistAndCalEaten() (sprintDist, eatenCal float64, err error) {
 	return
 }
 
-func CheckBmr(dayLimit, sprintDist, eatenCal float64) {
-	burnCal := dayLimit + sprintDist*1000
-	if eatenCal > burnCal+100 {
+func CheckBmr(dayLimit, sprintDist, eatenCal, weight float64) {
+	burnCal := dayLimit + sprintDist*weight
+	if eatenCal > burnCal+10 {
 		fmt.Printf("Жрать надо меньше, или пробежи еще %.2f км", (eatenCal-burnCal)/1000)
-	} else if eatenCal < burnCal-100 {
-		fmt.Printf("Ты на сушке? Если нет, то можешь еще %.2f калорий покушать", burnCal-eatenCal)
+	} else if eatenCal < burnCal-10 {
+		fmt.Printf("Ты на сушке? Если нет, то можешь еще %.2f ккал покушать", burnCal-eatenCal)
 	} else {
 		fmt.Println("Ай молодец! Твой фитнес тренер гордиться тобой!")
 	}

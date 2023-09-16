@@ -13,5 +13,5 @@ func main() {
 		return
 	}
 
-	sportsMan.CheckBmr(dayLimit, runned, eaten)
+	sportsMan.CheckBmr(dayLimit, runned, eaten, w)
 }
