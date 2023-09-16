@@ -3,15 +3,17 @@ package main
 import "firstClass/firstFunc/sportsMan"
 
 func main() {
-	w, h, a, err := sportsMan.GetCharachteristics()
-	if err != nil {
-		return
-	}
-	dayLimit := sportsMan.CountRequiredCalories(w, h, a)
-	runned, eaten, err := sportsMan.GetDistAndCalEaten()
+	w, h, a, err := sportsMan.GetCharacteristics()
 	if err != nil {
 		return
 	}
 
-	sportsMan.CheckBmr(dayLimit, runned, eaten, w)
+	dayLimit := sportsMan.CountRequiredCalories(w, h, a)
+
+	ran, eaten, err := sportsMan.GetDistAndCalEaten()
+	if err != nil {
+		return
+	}
+
+	sportsMan.CheckBmr(dayLimit, ran, eaten, w)
 }
