@@ -8,14 +8,15 @@ const ageCof = 5.7
 const bmrCon = 88.36
 
 func GetCharacteristics() (weight, height, age float64, err error) {
-	fmt.Print("Введите свой вес в кг, свой пост в см и свой возраст: ")
+	fmt.Print("Введите свой вес в кг, свой рост в см и свой возраст: ")
 	_, err = fmt.Scan(&weight, &height, &age)
 	if err != nil {
 		fmt.Println("Input error", err.Error())
 		return
 	}
-	if weight <= 0 || height <= 0 || age <= 0 {
+	if weight <= 25 || height <= 50 || age <= 3 || weight >= 250 || height >= 300 || age > 99 {
 		fmt.Println("Давай без шуток")
+		return
 	}
 	return
 }
@@ -45,7 +46,7 @@ func GetDistAndCalEaten() (sprintDist, eatenCal float64, err error) {
 func CheckBmr(dayLimit, sprintDist, eatenCal, weight float64) {
 	burnCal := dayLimit + sprintDist*weight
 	if eatenCal > burnCal+100 {
-		fmt.Printf("Жрать надо меньше, или пробежи еще %.2f км", (eatenCal-burnCal)/1000)
+		fmt.Printf("Жрать надо меньше, или пробежи еще %.2f км", (eatenCal-burnCal)/(sprintDist*weight))
 	} else if eatenCal < burnCal-100 {
 		fmt.Printf("Ты на сушке? Если нет, то можешь еще %.2f ккал покушать", burnCal-eatenCal)
 	} else {
