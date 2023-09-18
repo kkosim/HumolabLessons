@@ -1,1 +1,1 @@
-module firstClass
+module HumolabLessons

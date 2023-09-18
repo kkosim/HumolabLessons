@@ -1,6 +1,6 @@
 package main
 
-import "firstClass/firstFunc/sportsMan"
+import "HumolabLessons/firstFunc/sportsMan"
 
 func main() {
 	w, h, a, err := sportsMan.GetCharacteristics()
