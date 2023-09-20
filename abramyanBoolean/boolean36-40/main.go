@@ -181,5 +181,8 @@ func main() {
 		} else {
 			fmt.Print("Ферзь не может за один ход перейти на данную позицию")
 		}
+	default:
+		fmt.Println("Ты чё курил?")
+		return
 	}
 }
