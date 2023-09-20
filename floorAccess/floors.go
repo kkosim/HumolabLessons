@@ -2,7 +2,6 @@ package floorAccess
 
 import (
 	"fmt"
-	"strings"
 )
 
 func GetEmployeeID() (id string, err error) {
@@ -34,29 +33,32 @@ func GetFloor() (int, error) {
 
 func CheckId(id string, floor int) {
 
-	if strings.HasPrefix(id, "1") {
+	switch id[0:1] {
+	case "1":
 		if floor > 1 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	} else if strings.HasPrefix(id, "2") {
+	case "2":
 		if floor > 2 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	} else if strings.HasPrefix(id, "3") {
+	case "3":
 		if floor > 3 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	} else if strings.HasPrefix(id, "4") {
+	case "4":
 		if floor > 4 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome Big Boss!")
 		}
+	default:
+		fmt.Println("По идее unreachable code")
 	}
 }
