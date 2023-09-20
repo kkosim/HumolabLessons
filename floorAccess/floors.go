@@ -5,25 +5,35 @@ import (
 	"strings"
 )
 
-func GetEmployeeID() {
-	fmt.Print("Введите ID: ")
-	var id string
-	_, err := fmt.Scan(&id)
-	if err != nil {
-		fmt.Println("Input error: ", err.Error())
-		return
+func GetEmployeeID() (id string, err error) {
+
+	fmt.Print("Input your ID: ")
+	_, _ = fmt.Scan(&id)
+	if id[0:1] == "1" || id[0:1] == "2" || id[0:1] == "3" || id[0:1] == "4" {
+		return id, nil
+	} else {
+		return "", fmt.Errorf("wrong id")
 	}
-	fmt.Print("На какой этаж вы хотите попасть? ")
+}
+
+func GetFloor() (int, error) {
+
+	fmt.Print("What floor would you like to go? ")
 	var floor int
-	_, err = fmt.Scan(&floor)
+	_, err := fmt.Scan(&floor)
 	if err != nil {
 		fmt.Println("Input error: ", err)
-		return
+		return 0, fmt.Errorf("no such floor")
 	}
-	if floor < 1 || floor > 4 {
-		fmt.Print("Шутник")
-		return
+	if floor >= 1 && floor <= 4 {
+		return floor, nil
+	} else {
+		return 0, fmt.Errorf("no such floor")
 	}
+}
+
+func CheckId(id string, floor int) {
+
 	if strings.HasPrefix(id, "1") {
 		if floor > 1 {
 			fmt.Println("Access denied!")
@@ -48,8 +58,5 @@ func GetEmployeeID() {
 		} else {
 			fmt.Println("Welcome Big Boss!")
 		}
-	} else {
-		fmt.Println("Wrong ID!")
 	}
-	return
 }
