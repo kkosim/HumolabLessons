@@ -1,14 +1,38 @@
 package main
 
-import "HumolabLessons/abramyanFor/For40"
+import (
+	"HumolabLessons/abramyanFor/For39"
+	"HumolabLessons/abramyanFor/For40"
+	"HumolabLessons/abramyanIf/If28"
+	"HumolabLessons/abramyanIf/If29"
+	"HumolabLessons/abramyanIf/If30"
+	"fmt"
+)
 
 func main() {
 
-	//If28.IsLeapYear()
-	//If29.EvenOddPosNeg()
-	//If30.ThreeDigitStatus()
-	//For39.ABTimes()
-	For40.ABSmooth()
+	fmt.Println("Вам какую задачу?")
+	fmt.Println("If28 - 1\nIf29 - 2\nIf30 - 3\nFor39 - 4\nFor40 - 5\n")
+	var problem uint8
+	_, err := fmt.Scan(&problem)
+	if err != nil {
+		fmt.Println("Input error: ", err)
+		return
+	}
+	switch problem {
+	case 1:
+		If28.IsLeapYear()
+	case 2:
+		If29.EvenOddPosNeg()
+	case 3:
+		If30.ThreeDigitStatus()
+	case 4:
+		For39.ABTimes()
+	case 5:
+		For40.ABSmooth()
+	default:
+		fmt.Println("Следуйте указаниям!")
+	}
 
 	/*id, err := floorAccess.GetEmployeeID()
 	if err != nil {
