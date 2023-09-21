@@ -12,7 +12,7 @@ import (
 func main() {
 
 	fmt.Println("Вам какую задачу?")
-	fmt.Println("If28 - 1\nIf29 - 2\nIf30 - 3\nFor39 - 4\nFor40 - 5\n")
+	fmt.Println("If28 - 1\nIf29 - 2\nIf30 - 3\nFor39 - 4\nFor40 - 5")
 	var problem uint8
 	_, err := fmt.Scan(&problem)
 	if err != nil {

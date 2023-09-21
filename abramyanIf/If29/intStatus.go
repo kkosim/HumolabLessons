@@ -3,6 +3,7 @@ package If29
 import "fmt"
 
 func EvenOddPosNeg() {
+	fmt.Println("Дано целое число. Вывести его строку-описание вида «отрицательное\nчетное число», «нулевое число», «положительное нечетное число» и т. д.")
 	fmt.Print("Введите целое число: ")
 	var num int
 	_, err := fmt.Scan(&num)

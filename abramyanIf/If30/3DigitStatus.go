@@ -3,6 +3,7 @@ package If30
 import "fmt"
 
 func ThreeDigitStatus() {
+	fmt.Println(" Дано целое число, лежащее в диапазоне 1–999. Вывести его строкуописание вида «четное двузначное число», «нечетное трехзначное число»\nи т. д.")
 	fmt.Print("Введите число от 1 до 999: ")
 	var num int
 	_, err := fmt.Scan(&num)

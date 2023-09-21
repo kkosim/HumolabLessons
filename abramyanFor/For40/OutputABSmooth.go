@@ -3,6 +3,7 @@ package For40
 import "fmt"
 
 func ABSmooth() {
+	fmt.Println("Даны целые числа A и B (A < B). Вывести все целые числа от A до B\nвключительно; при этом число A должно выводиться 1 раз, число A + 1\nдолжно выводиться 2 раза и т. д.")
 	fmt.Print("Введите два числа A и В (А < B): ")
 	var a, b int
 	_, err := fmt.Scan(&a, &b)
