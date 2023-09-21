@@ -17,12 +17,12 @@ func GetEmployeeID() (id string, err error) {
 
 func GetFloor() (int, error) {
 
-	fmt.Print("What floor would you like to go? ")
+	fmt.Print("Which floor do you need to go to?: ")
 	var floor int
 	_, err := fmt.Scan(&floor)
 	if err != nil {
 		fmt.Println("Input error: ", err)
-		return 0, fmt.Errorf("no such floor")
+		return 0, fmt.Errorf("wrong type")
 	}
 	if floor >= 1 && floor <= 4 {
 		return floor, nil

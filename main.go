@@ -1,13 +1,16 @@
 package main
 
-import (
-	"HumolabLessons/floorAccess"
-	"fmt"
-)
+import "HumolabLessons/abramyanFor/For40"
 
 func main() {
 
-	id, err := floorAccess.GetEmployeeID()
+	//If28.IsLeapYear()
+	//If29.EvenOddPosNeg()
+	//If30.ThreeDigitStatus()
+	//For39.ABTimes()
+	For40.ABSmooth()
+
+	/*id, err := floorAccess.GetEmployeeID()
 	if err != nil {
 		fmt.Println("error: ", err)
 		return
@@ -18,7 +21,7 @@ func main() {
 		return
 	}
 	floorAccess.CheckId(id, floor)
-
+	*/
 }
 
 //var somoni float32
