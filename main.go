@@ -1,18 +1,13 @@
 package main
 
-import (
-	"HumolabLessons/abramyanFor/For39"
-	"HumolabLessons/abramyanFor/For40"
-	"HumolabLessons/abramyanIf/If28"
-	"HumolabLessons/abramyanIf/If29"
-	"HumolabLessons/abramyanIf/If30"
-	"fmt"
-)
+import rune2 "HumolabLessons/rune"
 
 func main() {
 
-	fmt.Println("Вам какую задачу?")
-	fmt.Println("If28 - 1\nIf29 - 2\nIf30 - 3\nFor39 - 4\nFor40 - 5")
+	fish := "ззззззззззззззззззззззззззззззззззззззззззззззkkkkkkзззззззззззззззз"
+	rune2.TwentyGap(fish)
+	/*fmt.Println("Вам какую задачу?")
+	fmt.Println("1 - If28\n2 - If29\n3 - If30\n4 - For39\n5 - For40")
 	var problem uint8
 	_, err := fmt.Scan(&problem)
 	if err != nil {
@@ -32,21 +27,21 @@ func main() {
 		For40.ABSmooth()
 	default:
 		fmt.Println("Следуйте указаниям!")
-	}
-
-	/*id, err := floorAccess.GetEmployeeID()
-	if err != nil {
-		fmt.Println("error: ", err)
-		return
-	}
-	floor, err1 := floorAccess.GetFloor()
-	if err1 != nil {
-		fmt.Println("error: ", err1)
-		return
-	}
-	floorAccess.CheckId(id, floor)
-	*/
+	}*/
 }
+
+/*id, err := floorAccess.GetEmployeeID()
+if err != nil {
+	fmt.Println("error: ", err)
+	return
+}
+floor, err1 := floorAccess.GetFloor()
+if err1 != nil {
+	fmt.Println("error: ", err1)
+	return
+}
+floorAccess.CheckId(id, floor)
+*/
 
 //var somoni float32
 /*var somoni int
