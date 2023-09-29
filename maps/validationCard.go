@@ -5,11 +5,9 @@ import (
 	"regexp"
 )
 
-var cardNumberRegex = `^\d{4}-^\d{4}$`
+var cardNumberRegex = `^\d{4}-\d{4}$`
 
-func ValidationCard() {
-	var List1 = []string{"1222-3243", "6123-2321", "1112-2341", "7112-2344", "3211-2231"}
-	var List2 = []string{"1222-3243", "1123-2321", "9112-2341", "2112-2344", "5211-2231"}
+func ValidationCard(List1 []string, List2 []string) {
 	mapListHumo := make(map[string]string)
 	mapListOther := make(map[string]string)
 	var List12 = append(List1, List2...)
