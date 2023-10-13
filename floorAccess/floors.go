@@ -1,21 +1,34 @@
-package floorAccess
+package Floor
 
 import (
 	"fmt"
 )
 
-func GetEmployeeID() (id string, err error) {
-
-	fmt.Print("Input your ID: ")
-	_, _ = fmt.Scan(&id)
-	if id[0:1] == "1" || id[0:1] == "2" || id[0:1] == "3" || id[0:1] == "4" {
-		return id, nil
-	} else {
-		return "", fmt.Errorf("wrong id")
-	}
+type User struct {
+	ID    string
+	Floor int
 }
 
-func GetFloor() (int, error) {
+func (u User) GetEmployeeID() (string, int) {
+
+	fmt.Print("Input your ID: ")
+	_, _ = fmt.Scan(&u.ID)
+	switch u.ID[:1] {
+	case "1":
+		u.Floor = 1
+	case "2":
+		u.Floor = 2
+	case "3":
+		u.Floor = 3
+	case "4":
+		u.Floor = 4
+	default:
+		fmt.Println("Wrong ID!")
+	}
+	return u.ID, u.Floor
+}
+
+func GetWantedFloor() (int, error) {
 
 	fmt.Print("Which floor do you need to go to?: ")
 	var floor int
@@ -31,28 +44,28 @@ func GetFloor() (int, error) {
 	}
 }
 
-func CheckId(id string, floor int) {
+func (u User) CheckId(floor int) {
 
-	switch id[0:1] {
-	case "1":
+	switch u.Floor {
+	case 1:
 		if floor > 1 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	case "2":
+	case 2:
 		if floor > 2 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	case "3":
+	case 3:
 		if floor > 3 {
 			fmt.Println("Access denied!")
 		} else {
 			fmt.Println("Welcome!")
 		}
-	case "4":
+	case 4:
 		if floor > 4 {
 			fmt.Println("Access denied!")
 		} else {
@@ -61,4 +74,13 @@ func CheckId(id string, floor int) {
 	default:
 		fmt.Println("По идее unreachable code")
 	}
+}
+
+func kosim() {
+	var str string
+	example(str)
+}
+
+func example(exp interface{}) {
+	fmt.Println("SHIT: ", exp)
 }
