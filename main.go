@@ -7,14 +7,28 @@ func main() {
 	  var proximaCentauriB GravityFinder = ProximaCentauriB{Name: "PCB"}
 	  titanW.calculateWeight()
 	  proximaCentauriB.calculateWeight()*/
-	var (
-		planet interfacePlanets.ProximaCentauriB
-		moon   interfacePlanets.Titan
-	)
-	planet.Name = "PCB"
-	moon.Name = "Titan"
-	interfacePlanets.Weight(planet)
-	interfacePlanets.Weight(moon)
+
+	ProximaCentauraB := interfacePlanets.Planet{
+		Name:   "PCB",
+		Mass:   0.123,
+		Radius: 0.141,
+		Star:   "ProximaCentaura",
+	}
+	Titan := interfacePlanets.Satellite{
+		Name:   "Titan",
+		Mass:   0.0225,
+		Radius: 0.4,
+		Planet: "Saturn",
+	}
+	Sun := interfacePlanets.Star{
+		Name:   "Sun",
+		Mass:   332940,
+		Radius: 109,
+		Galaxy: "Milky Way",
+	}
+	interfacePlanets.Weight(&ProximaCentauraB)
+	interfacePlanets.Weight(&Titan)
+	interfacePlanets.Weight(&Sun)
 	/*	var u floorAccess2.User
 		u.ID, u.Floor = floorAccess2.User{}.GetEmployeeID()
 		//id, err := floorAccess.GetEmployeeID()
