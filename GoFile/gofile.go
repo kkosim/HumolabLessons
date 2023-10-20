@@ -9,20 +9,31 @@ import (
 var Lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tellus ligula, feugiat ac mauris ac, tincidunt mollis leo. Donec mollis consequat lorem nec bibendum. Proin elementum, lacus non gravida"
 
 func main() {
-	//os.Create("GoFile/files/text.txt")
-	Prikol := TwentyGap(Lorem)
-	FillFile(Prikol)
+	//file, _ := os.Create("files/texxt.txt")
+	//file.Close()
+	LoremText := TwentyGap(Lorem)
+	FillFile(LoremText)
 	fmt.Println(FiletextToConsole())
+	if LoremText == FiletextToConsole() {
+		fmt.Println("Alike")
+	} else {
+		fmt.Println("Not Alike")
+	}
 }
 
 func FillFile(text string) {
-	file, err := os.Create("C:\\Users\\Lenovo\\GolandProjects\\HumolabLessons\\GoFile\\files\\text.txt")
+	file, err := os.Create("files/text.txt")
 	if err != nil {
 		fmt.Println("unable to open file: ", err.Error())
 		os.Exit(1)
 	}
-	defer file.Close()
-	file.WriteString(text)
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println("error while closing file", err.Error())
+		}
+	}(file)
+	_, err = file.WriteString(text);
 	if err != nil {
 		fmt.Println("unable to fill file: ", err.Error())
 		os.Exit(2)
@@ -30,12 +41,17 @@ func FillFile(text string) {
 }
 
 func FiletextToConsole() (str string) {
-	file, err := os.Open("C:\\Users\\Lenovo\\GolandProjects\\HumolabLessons\\GoFile\\files\\text.txt")
+	file, err := os.Open("files/text.txt")
 	if err != nil {
 		fmt.Println("error while opening file: ", err.Error())
 		return
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println("error while closing file: ", err.Error())
+		}
+	}(file)
 	data := make([]byte, 250)
 	for {
 		n, err := file.Read(data)
@@ -58,7 +74,6 @@ func TwentyGap(LoremText string) string {
 		}
 		str += string(bytes[i])
 		fmt.Println("check2: ", str)
-
 	}
 	return str
 }
