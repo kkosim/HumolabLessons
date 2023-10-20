@@ -68,12 +68,12 @@ func main() {
 	go buyProduct()
 	showProducts()
 
-	time.Sleep(10 * time.Second)
+	time.Sleep(30 * time.Second)
 }
 
 func scheduler() {
 	for {
-		time.Sleep(2 * time.Second)
+		time.Sleep(14 * time.Second)
 		showProducts()
 	}
 }
